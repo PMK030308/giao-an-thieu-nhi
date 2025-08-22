@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giáo Án Giáo Lý - Ngành Thiếu Nhi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="header-left">
+  <img src="images/avatar.png" alt="Avatar" class="avatar">
+  <div class="header-label">Giáo lý viên</div>
+      </div>
+
+      <div class="header-center">
+        <h1>📖 Giáo Án Giáo Lý</h1>
+        <p class="subtitle">Ngành Thiếu Nhi</p>
+      </div>
+
+      <div class="header-right">
+  <div class="nav-label">Menu</div>
+  <nav aria-label="Main navigation">
+          <a href="#intro">Giới thiệu</a>
+          <a href="#lessons">Bài học</a>
+          <a href="#schedule">Lịch dạy</a>
+          <a href="#contact">Liên hệ</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Giới thiệu -->
+    <section id="intro" class="intro">
+      <h2>Giới thiệu</h2>
+      <p>
+        Website này giúp các giáo lý viên quản lý giáo án và lịch dạy 
+        cho các em Thiếu Nhi. Các bài học được biên soạn ngắn gọn, dễ hiểu, 
+        kèm hoạt động minh họa để các em tiếp thu tốt hơn.
+      </p>
+    </section>
+
+    <!-- Danh sách bài học -->
+    <section id="lessons" class="lessons">
+      <h2>Danh sách bài học</h2>
+      <ul>
+        <li>
+          <span>Bài 1: Thiên Chúa là Cha yêu thương</span>
+          <button onclick="showLesson('lesson1')">Xem chi tiết</button>
+        </li>
+        <li>
+          <span>Bài 2: Cầu nguyện với Chúa</span>
+          <button onclick="showLesson('lesson2')">Xem chi tiết</button>
+        </li>
+        <li>
+          <span>Bài 3: Yêu thương bạn bè</span>
+          <button onclick="showLesson('lesson3')">Xem chi tiết</button>
+        </li>
+        <li>
+          <span>Bài 4: Vâng lời cha mẹ</span>
+          <button onclick="showLesson('lesson4')">Xem chi tiết</button>
+        </li>
+      </ul>
+
+      <section id="lessonContent" class="lesson-content">
+        <h2>Bài học</h2>
+        <div id="lessonText">👉 Chọn bài học để xem nội dung.</div>
+      </section>
+    </section>
+
+    <!-- Lịch dạy -->
+    <section id="schedule" class="schedule">
+      <h2>Lịch dạy</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Ngày</th>
+            <th>Bài học</th>
+            <th>Ghi chú</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Chúa Nhật 24/08/2025</td>
+            <td>Bài 1: Thiên Chúa là Cha yêu thương</td>
+            <td>Giới thiệu đầu năm</td>
+          </tr>
+          <tr>
+            <td>Chúa Nhật 31/08/2025</td>
+            <td>Bài 2: Cầu nguyện với Chúa</td>
+            <td>Học kinh Lạy Cha</td>
+          </tr>
+          <tr>
+            <td>Chúa Nhật 07/09/2025</td>
+            <td>Bài 3: Yêu thương bạn bè</td>
+            <td>Đóng kịch ngắn</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Liên hệ -->
+    <section id="contact" class="contact">
+      <h2>Liên hệ</h2>
+      <p>Giáo lý viên: <b>Phạm Minh Khôi</b></p>
+      <p>Email: <a href="mailto:khoi@example.com">khoi@example.com</a></p>
+      <p>Điện thoại: 0909 123 456</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Giáo Lý Viên. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+body {
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #fdf6ec 60%, #e3eaff 100%);
+  color: #333;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  background: linear-gradient(90deg, #4e73df 60%, #1cc88a 100%);
+  color: white;
+  box-shadow: 0 4px 16px rgba(78,115,223,0.12);
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+/* Header inner: three-column layout */
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header-left, .header-center, .header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-left {
+  flex: 0 0 auto;
+  gap: 0.6rem;
+}
+
+.header-center {
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 1rem;
+}
+
+.header-center .subtitle {
+  opacity: 0.95;
+  margin-top: 0.15rem;
+  font-size: 0.95rem;
+}
+
+.header-right {
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.header-right nav {
+  display: flex;
+  gap: 0.6rem;
+}
+
+header nav {
+  margin-top: 1rem;
+}
+
+header nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+.avatar {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 8px rgba(78,115,223,0.15);
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+/* Card style for sections */
+.intro, .lessons, .schedule, .contact {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(78,115,223,0.08);
+  padding: 2rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  color: #4e73df;
+  margin-top: 1rem;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(78,115,223,0.08);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f4f8ff;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(78,115,223,0.07);
+  padding: 0.8rem 1rem;
+  transition: box-shadow 0.3s;
+}
+ul li:hover {
+  box-shadow: 0 4px 16px rgba(78,115,223,0.15);
+  background: #e3eaff;
+}
+
+button {
+  background: linear-gradient(90deg, #1cc88a 60%, #4e73df 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(28,200,138,0.12);
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #17a673;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 16px rgba(28,200,138,0.18);
+}
+
+.lesson-content {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f8fbff;
+  border: 1px solid #e3eaff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(78,115,223,0.07);
+}
+
+.schedule table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(78,115,223,0.07);
+}
+
+.schedule th, .schedule td {
+  border: 1px solid #e3eaff;
+  padding: 12px 10px;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.schedule th {
+  background: linear-gradient(90deg, #4e73df 60%, #1cc88a 100%);
+  color: white;
+  font-size: 1.1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1.2rem;
+  background: linear-gradient(90deg, #4e73df 60%, #1cc88a 100%);
+  color: white;
+  margin-top: 2rem;
+  font-size: 1rem;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  box-shadow: 0 -2px 12px rgba(78,115,223,0.08);
+}
+/* Responsive design */
+@media (max-width: 700px) {
+  main {
+    max-width: 98vw;
+    padding: 0.5rem;
+  }
+  .intro, .lessons, .schedule, .contact {
+    padding: 1rem 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .lesson-content {
+    padding: 1rem 0.5rem;
+  }
+  .avatar {
+    width: 70px;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  button {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Make header parts visually separated on wide screens */
+@media (min-width: 701px) {
+  .header-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 1rem;
+    margin-right: 0.5rem;
+    border-right: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .header-label {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.85rem;
+    margin-left: 0.8rem;
+    background: rgba(255,255,255,0.06);
+    padding: 6px 8px;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  }
+
+  .header-center {
+    padding: 0 1rem;
+  }
+
+  .header-right {
+    padding-left: 1rem;
+    margin-left: 0.5rem;
+    border-left: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .nav-label {
+    color: rgba(255,255,255,0.95);
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    opacity: 0.95;
+  }
+
+  /* subtle labels to separate nav visually */
+  .header-right nav::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+  }
+
+  /* focus state for accessibility */
+  .header-right a:focus {
+    outline: 3px solid rgba(255,255,255,0.18);
+    outline-offset: 3px;
+  }
+
+  /* make title more prominent and separated */
+  .header-center h1 {
+    font-weight: 700;
+    color: #fff;
+  }
+}
+
+/* Hide small labels on narrow screens to save space */
+@media (max-width: 700px) {
+  .header-label, .nav-label { display: none; }
+  .header-left { border-right: none; padding-right: 0; margin-right: 0; }
+  .header-right { border-left: none; padding-left: 0; margin-left: 0; }
+}
