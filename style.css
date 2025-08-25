@@ -1,3 +1,10 @@
+/* =====================
+   GLOBAL STYLES
+===================== */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
   margin: 0;
@@ -7,9 +14,17 @@ body {
   min-height: 100vh;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =====================
+   HEADER
+===================== */
 header {
   text-align: center;
-  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  padding: 1.5rem 1rem;
   background: linear-gradient(90deg, #4e73df 60%, #1cc88a 100%);
   color: white;
   box-shadow: 0 4px 16px rgba(78,115,223,0.12);
@@ -17,14 +32,14 @@ header {
   border-bottom-right-radius: 24px;
 }
 
-/* Header inner: three-column layout */
 .header-inner {
   max-width: 1100px;
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap; /* cho mobile xuống dòng */
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .header-left, .header-center, .header-right {
@@ -41,7 +56,7 @@ header {
   flex: 1 1 auto;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
 }
 
 .header-center .subtitle {
@@ -56,19 +71,15 @@ header {
   align-items: flex-end;
 }
 
-.header-right nav {
-  display: flex;
-  gap: 0.6rem;
-}
-
 header nav {
-  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 header nav a {
   color: white;
-  margin: 0 10px;
-  text-decoration: none;
   font-weight: bold;
 }
 
@@ -76,14 +87,15 @@ header nav a:hover {
   text-decoration: underline;
 }
 
+/* =====================
+   AVATAR
+===================== */
 .avatar {
   width: 64px;
   height: 64px;
-  border-radius: 50%;           /* làm tròn hoàn toàn */
-  object-fit: cover;            /* cắt ảnh cho vừa khung */
-  display: inline-block;
-  vertical-align: middle;
-  border: 2px solid #fff;       /* viền trắng nhẹ */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
@@ -95,12 +107,11 @@ header nav a:hover {
   outline: none;
 }
 
-/* resize trên màn nhỏ */
-@media (max-width: 700px) {
-  .avatar { width: 48px; height: 48px; }
-}
-
+/* =====================
+   MAIN CONTENT
+===================== */
 main {
+  width: 100%;
   max-width: 900px;
   margin: 2rem auto;
   padding: 1rem;
@@ -108,7 +119,10 @@ main {
   flex-direction: column;
   gap: 2rem;
 }
-/* Card style for sections */
+
+/* =====================
+   CARD SECTIONS
+===================== */
 .intro, .lessons, .schedule, .contact {
   background: #fff;
   border-radius: 16px;
@@ -125,6 +139,9 @@ h2 {
   text-shadow: 0 2px 8px rgba(78,115,223,0.08);
 }
 
+/* =====================
+   LESSON LIST
+===================== */
 ul {
   list-style: none;
   padding: 0;
@@ -141,6 +158,7 @@ ul li {
   padding: 0.8rem 1rem;
   transition: box-shadow 0.3s;
 }
+
 ul li:hover {
   box-shadow: 0 4px 16px rgba(78,115,223,0.15);
   background: #e3eaff;
@@ -165,7 +183,9 @@ button:hover {
   box-shadow: 0 4px 16px rgba(28,200,138,0.18);
 }
 
-/* Vùng chi tiết bài học ẩn mặc định */
+/* =====================
+   LESSON DETAIL
+===================== */
 .lesson-content {
   background: #fff;
   border: 1px solid rgba(0,0,0,0.06);
@@ -176,12 +196,8 @@ button:hover {
   position: relative;
 }
 
-/* ẩn khi collapsed */
-.lesson-content.collapsed {
-  display: none;
-}
+.lesson-content.collapsed { display: none; }
 
-/* nút đóng */
 .close-lesson {
   position: absolute;
   right: 8px;
@@ -195,19 +211,10 @@ button:hover {
 }
 .close-lesson:focus { outline: 2px solid #5b9dd9; border-radius: 4px; }
 
-/* đảm bảo tiêu đề chi tiết có thể focus để trợ năng */
-.lesson-content h3 { margin-top: 0; outline: none; }
-
-:root{
-  --primary: #4e73df;
-  --accent: #1cc88a;
-  --muted: #f4f8ff;
-  --text: #333;
-  --glass: rgba(255,255,255,0.6);
-}
-
-/* Thanh tìm kiếm - đẹp, có icon và hiệu ứng focus */
-#searchInput{
+/* =====================
+   SEARCH INPUT
+===================== */
+#searchInput {
   width:100%;
   max-width:520px;
   padding:10px 14px 10px 44px;
@@ -217,7 +224,7 @@ button:hover {
   background:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24'%3E%3Cpath fill='%234e73df' d='M21 21l-4.35-4.35'/%3E%3Cpath fill='%234e73df' d='M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15z'/%3E%3C/svg%3E")
     no-repeat 12px center / 18px 18px,
-    linear-gradient(180deg, var(--glass), rgba(255,255,255,0.95));
+    linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.95));
   box-shadow: 0 6px 18px rgba(78,115,223,0.06);
   font-size:1rem;
   color:var(--text);
@@ -227,11 +234,13 @@ button:hover {
 #searchInput:focus{
   outline: none;
   box-shadow: 0 12px 30px rgba(78,115,223,0.12);
-  border-color: var(--primary);
+  border-color: #4e73df;
   transform: translateY(-2px);
 }
 
-/* Lịch học - bảng rõ ràng, rows alternated, hover và responsive card view */
+/* =====================
+   SCHEDULE TABLE
+===================== */
 .schedule table{
   width:100%;
   border-collapse: separate;
@@ -245,55 +254,70 @@ button:hover {
 }
 
 .schedule thead th{
-  background: linear-gradient(90deg, var(--primary) 60%, var(--accent) 100%);
+  background: linear-gradient(90deg, #4e73df 60%, #1cc88a 100%);
   color: #fff;
   padding:14px 12px;
   text-align:left;
   font-weight:700;
   font-size:0.95rem;
-  text-transform: uppercase;
-  letter-spacing:0.6px;
-  border-bottom: none;
 }
 
 .schedule tbody td{
-  padding:12px 12px;
+  padding:12px;
   background: #fff;
   border-bottom: 1px solid rgba(78,115,223,0.04);
-  vertical-align: middle;
-  font-size:0.98rem;
-  color:var(--text);
+  font-size:0.95rem;
+  color:#333;
 }
 
-/* alternating rows using subtle tint */
 .schedule tbody tr:nth-child(odd) td{ background: #fbfdff; }
+
 .schedule tbody tr:hover td{
   background: linear-gradient(90deg, rgba(78,115,223,0.03), rgba(28,200,138,0.01));
   transform: translateX(4px);
   transition: background .16s ease, transform .12s ease;
 }
 
-/* badge for "Số bài" cell */
+/* badge */
 .schedule td .badge{
   display:inline-block;
   min-width:36px;
   padding:6px 10px;
   background: rgba(78,115,223,0.08);
-  color: var(--primary);
+  color: #4e73df;
   border-radius:999px;
   font-weight:700;
   text-align:center;
   font-size:0.95rem;
 }
 
-/* highlight upcoming row more rõ */
+/* upcoming */
 .upcoming td{
   background: linear-gradient(90deg, #fff9e6, #fffef8) !important;
   box-shadow: inset 4px 0 0 0 rgba(255,193,7,0.14);
 }
 
-/* small screens: chuyển table -> card list để dễ đọc */
+/* =====================
+   RESPONSIVE MOBILE
+===================== */
 @media (max-width:700px){
+  main {
+    max-width: 98vw;
+    padding: 0.5rem;
+  }
+  .intro, .lessons, .schedule, .contact {
+    padding: 1rem 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .lesson-content { padding: 1rem 0.5rem; }
+  h2 { font-size: 1.3rem; }
+  button { padding: 8px 12px; font-size: 0.95rem; }
+  .avatar { width: 48px; height: 48px; }
+
+  /* Header nhỏ */
+  .header-left, .header-right, .header-label, .nav-label { display: none; }
+
+  /* Table card view */
   .schedule table, .schedule thead, .schedule tbody, .schedule th, .schedule td, .schedule tr{
     display:block;
     width:100%;
@@ -308,112 +332,10 @@ button:hover {
   .schedule tbody td{
     display:flex;
     justify-content:space-between;
-    padding:12px 14px;
+    padding:8px 10px;
     border-bottom:none;
   }
-  .schedule tbody td:first-child{
-    font-weight:700;
-    color:var(--primary);
-  }
-  .schedule tbody td:nth-child(2){
-    color:#666;
-    font-size:0.95rem;
-  }
-  .schedule tbody td:nth-child(3) .badge{
-    background: rgba(28,200,138,0.09);
-    color: var(--accent);
-  }
-}
-
-/* Responsive design */
-@media (max-width: 700px) {
-  main {
-    max-width: 98vw;
-    padding: 0.5rem;
-  }
-  .intro, .lessons, .schedule, .contact {
-    padding: 1rem 0.5rem;
-    margin-bottom: 1rem;
-  }
-  .lesson-content {
-    padding: 1rem 0.5rem;
-  }
-  .avatar {
-    width: 70px;
-  }
-  h2 {
-    font-size: 1.3rem;
-  }
-  button {
-    padding: 8px 12px;
-    font-size: 0.95rem;
-  }
-}
-
-/* Make header parts visually separated on wide screens */
-@media (min-width: 701px) {
-  .header-left {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-right: 1rem;
-    margin-right: 0.5rem;
-    border-right: 1px solid rgba(255,255,255,0.12);
-  }
-
-  .header-label {
-    color: rgba(255,255,255,0.9);
-    font-size: 0.85rem;
-    margin-left: 0.8rem;
-    background: rgba(255,255,255,0.06);
-    padding: 6px 8px;
-    border-radius: 8px;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
-  }
-
-  .header-center {
-    padding: 0 1rem;
-  }
-
-  .header-right {
-    padding-left: 1rem;
-    margin-left: 0.5rem;
-    border-left: 1px solid rgba(255,255,255,0.12);
-  }
-
-  .nav-label {
-    color: rgba(255,255,255,0.95);
-    font-size: 0.85rem;
-    margin-bottom: 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    opacity: 0.95;
-  }
-
-  /* subtle labels to separate nav visually */
-  .header-right nav::before {
-    content: '';
-    display: inline-block;
-    width: 10px;
-  }
-
-  /* focus state for accessibility */
-  .header-right a:focus {
-    outline: 3px solid rgba(255,255,255,0.18);
-    outline-offset: 3px;
-  }
-
-  /* make title more prominent and separated */
-  .header-center h1 {
-    font-weight: 700;
-    color: #fff;
-  }
-}
-
-/* Hide small labels on narrow screens to save space */
-@media (max-width: 700px) {
-  .header-label, .nav-label { display: none; }
-  .header-left { border-right: none; padding-right: 0; margin-right: 0; }
-  .header-right { border-left: none; padding-left: 0; margin-left: 0; }
-  
+  .schedule tbody td:first-child{ font-weight:700; color:#4e73df; }
+  .schedule tbody td:nth-child(2){ color:#666; font-size:0.9rem; }
+  .schedule tbody td:nth-child(3) .badge{ background: rgba(28,200,138,0.09); color:#1cc88a; }
 }
